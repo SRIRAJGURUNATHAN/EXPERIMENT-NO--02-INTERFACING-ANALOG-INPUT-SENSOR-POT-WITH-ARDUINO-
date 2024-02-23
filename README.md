@@ -1,5 +1,8 @@
  INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-
+DATE :23/02/2024
+NAME :SRIRAJ G
+ROLLNUMBER :212222040161
+DEPARTMENT :Computer Science And Engineering.
 
 
 
@@ -50,7 +53,8 @@ CIRCUIT DIAGRAM
 ![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
 
 **FIGURE -01
-**
+**![EXP 2 CIRCUIT](https://github.com/SRIRAJGURUNATHAN/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476758/47ae00c8-7f99-4e97-bff5-07d83f88adc6)
+
 
 **PROCEDURE:**
 
@@ -67,7 +71,32 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
- 
+ int pot;
+int led=7;
+void setup()
+{
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  pot=analogRead(A0);
+  //Serial.print("Value=");
+  Serial.println(pot);
+  if(pot>900)
+  {
+  digitalWrite(led,HIGH);
+  delay(500); // Wait for 500 millisecond(s)
+  digitalWrite(led,LOW);
+  delay(500); // Wait for 500 millisecond(s)
+}
+  else
+  {
+    digitalWrite(led,LOW);
+    delay(500);
+  }
+}
 
 
 
@@ -79,7 +108,15 @@ CIRCUIT DIAGRAM
 
 **
 **Simulation output:** 
-**
+**OFF CONDITION:
+![OFF CONDITION](https://github.com/SRIRAJGURUNATHAN/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476758/25c45502-91b3-43b0-873d-e63f38d6c8d9)
+
+**ON CONDITION:
+![ON CONDITION](https://github.com/SRIRAJGURUNATHAN/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476758/d9678077-eabf-4bff-b032-3a1c6aa150f7)
+
+**SERIAL MONITOR GRAPH:
+![SERIAL MONITOR GRAPH](https://github.com/SRIRAJGURUNATHAN/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/119476758/d9a0d1ed-f628-4af8-ba9f-64e67eb045b5)
+
 
 
 [My image](username.github.com/repository/img/image.jpg)
